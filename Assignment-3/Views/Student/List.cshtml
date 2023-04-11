@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Assignment_3.Models.Student>
+@{
+    ViewBag.Title = "List";
+}
+
+<div id="container">
+    <h1>List of Students</h1>
+    <form method="get" action="/Student/List/Searchkey">
+        <label for="search">Search Students:</label>
+        <input name="Searchkey" type="text" placeholder="Name or Enrolment number">
+        <input type="submit" value="Search">
+    </form>
+    <h3>There are @Model.Count() students. </h3>
+    <a class="navlink" href="/Student/List">Home</a>
+</div>
+<div>
+    @foreach (var student in Model)
+        <a href="~/Controllers/TeacherController.cs">~/Controllers/TeacherController.cs</a>
+    {
+    <div class="list-group-item row">
+        <div class="col-md-12"><a href="/Student/Show/@student.studentId">@student.studentfname@student.studentlname</a></div>
+    </div>
+    }
+</div>
+
